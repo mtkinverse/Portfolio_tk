@@ -2,217 +2,193 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taha Khan - Portfolio</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
 </head>
 
-<body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div id="home">
-            <div class="profile_name">
-                <b>Muhammad Taha Khan</b>
-
-                <div class="contact_info">
-                    <img src="html_finalprojimages/envelope.png"
-                        alt="https://icons8.com/icon/124377/circled-envelope" />
-                    mtkinverse@gmail.com
-                </div>
-                <div style="clear:both;"></div>
-                <div class="contact_info">
-                    <img src="html_finalprojimages/phone.png" alt="https://icons8.com/icon/124377/circled-envelope" />
-                    +92 306 2992398
-
-                </div>
-
+<body class="bg-bgTheme-light text-white font-[serif] text-pretty">
+    <div class="bg-bgTheme-dark w-full">
+        <nav class="flex gap-2 justify-between bg-bgTheme-dark rounded-lg p-2 text-base max-w-[1300px] mx-auto">
+            <div id="brand" class="my-auto cursor-pointer mx-1">
+                <h1 class="text-xl font-semibold border border-transparent hover:border-b-white duration-300">Muhammad
+                    Taha Khan</h1>
             </div>
-            <button id="button-nav" onclick="ToggleNav()">| | |</button>
-            <div class="dropdown" id="dropdown">
-                <a onclick='ToggleNav()' href="#about-me">About Me</a>
-                <a onclick='ToggleNav()' href="#skills">Skills</a>
-                <a onclick='ToggleNav()' href="#projects">Projects</a>
-                <a onclick='ToggleNav()' href="#recommendations">Recommendations</a>
-            </div>
-            <div class="topdiv">
-                <a class="topmenu" href="#about-me">About Me</a>
-                <a class="topmenu" href="#skills">Skills</a>
-                <a class="topmenu" href="#projects">Projects</a>
-                <a class="topmenu" href="#recommendations">Recommendations</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- About Me -->
-    <!-- link girl typing GIF : https://miro.medium.com/max/1400/1*qdAW1TjCN57h1lbuuzvchg.gif -->
-    <section id="about-me">
-        <div class="profile_image_container">
-            <img src="./html_finalprojimages/myPic.jpg" class="profile_image" />
-        </div>
-
-        <div>
-            <h1>
-                Hi, I'm Taha!
-            </h1>
-            <p>
-                I am currently enrolled in Computer Science Program at NUCES-FAST, Karachi. I am a full stack developer
-                certified by IBM. I also completed other certification from Coursera ;
-                I have worked on applications with IBM.
-                In my bachelors life, I have worked and successfully completed multiple <a
-                    href='#projects'>projects</a>,both individually and in teams.
-            </p>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div style="clear:both;"></div>
-
-        <div class="all_skills">
-            <div class="skill">
-                <img src="html_finalprojimages/html5.png" />
-                <h6>HTML</h6>
-                <p>2 years experience</p>
-            </div>
-
-            <div class="skill">
-                <img src="html_finalprojimages/CSS3.png" />
-                <h6>Cascading Style Sheets</h6>
-                <p>2 years experience</p>
-            </div>
-
-            <div class="skill">
-                <img src="html_finalprojimages/js.jpeg" />
-                <h6>JavaScript</h6>
-                <p>Experience of more than a year</p>
-            </div>
-
-            <div class="skill">
-                <img src="html_finalprojimages/react.png" />
-                <h6>React.js</h6>
-                <p>At Intermidiate Level</p>
-            </div>
-
-            <div class="skill">
-                <img src="html_finalprojimages/node.png" />
-                <h6>Node.js</h6>
-                <p>At Intermidiate Level</p>
-            </div>
-
-            <div class="skill">
-                <img src="html_finalprojimages/c c++.png" />
-                <h6>C/C++</h6>
-                <p>Experienced more than a year</p>
-            </div>
-
-
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="projects" id="projects">
-        <h2>
-            Projects
-        </h2>
-        <div style="clear:both;"></div>
-
-        <div id="projects-container" class="projects-container">
-            <div class="project-card">
-                <h3><a href='https://github.com/mtkinverse/code-with-react/tree/main/Text-Reformer' target='_blank'
-                        rel='norel'>Text-Reformer</a></h3>
-                <ul>
-                    <li>First one of the basic web apps. Text-Reformer is a text based utility which performs some small
-                        refactoring steps on the text you provide</li>
+            <div id="links" class="m-auto hidden md:block">
+                <ul class="flex gap-4">
+                    <li
+                        class="cursor-pointer hover:border-b active:rounded-md border border-transparent active:duration-0 active:border-b-transparent active:text-bgTheme-dark hover:me-2 hover:border-b-white duration-300 active:bg-white active:font-semibold p-2">
+                        <a href="#hero" class="size-max p-2">About me</a></li>
+                    <li
+                        class="cursor-pointer hover:border-b active:rounded-md border border-transparent active:duration-0 active:border-b-transparent active:text-bgTheme-dark hover:mx-2 hover:border-b-white duration-300 active:bg-white active:font-semibold p-2">
+                        <a href="#skills" class="size-max p-2">Skills</a></li>
+                    <li
+                        class="cursor-pointer hover:border-b active:rounded-md border border-transparent active:duration-0 active:border-b-transparent active:text-bgTheme-dark hover:ms-2 hover:border-b-white duration-300 active:bg-white active:font-semibold p-2">
+                        <a href="#projects" class="size-max p-2">Projects</a></li>
                 </ul>
             </div>
-            <hr>
-            <div class="project-card">
-                <h3><a href='https://github.com/mtkinverse/code-with-react/tree/main/Newsicles'
-                        target="_blank">Newsicles</a></h3>
-                <ul>
-                    <li>Newsicles is a news app which displays the news provided by <a href="https://newsapi.org"
-                            target='_blank'>NewsApi</a> in an interactive user environment. Besides, you can also
-                        specify categories and country for news to be display.</li>
+            <div id="emailPhone" class="my-auto cursor-pointer mx-1">
+                <ul class="flex flex-col text-sm">
+                    <li>mtkinverse@gmail.com</li>
+                    <li>+92 3062992398</li>
                 </ul>
             </div>
-            <hr>
-            <div class="project-card">
-                <h3><a href="https://github.com/mtkinverse/code-with-react/tree/main/inotebook"
-                        target='_blank'>iNoteBook</a></h3>
-                <ul>
-                    <li>iNoteBook is a secured app where you can add,delete,edit and view your notes</li>
-                </ul>
-            </div>
-            <hr>
-            <div class="project-card">
-                <h3><a href="https://github.com/mtkinverse/code_cpp" target='_blank'>Vertex</a> and <a
-                        href="https://github.com/mtkinverse/code_tk/tree/main/project" target='_blank'>Pong</a></h3>
-                <ul>
-                    <li>Vertex and pong are two basic games. Pong, a ball and pad game, is a single and multiplayer game
-                        build on CLI with C language. Whereas, Vertex is a platformer baseed game , particularly focused the
-                        assisment of OOP concepts in C++, is build using SFML libraries</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <div style="clear:both;"></div>
-
-    <!-- Recommendations -->
-    <section id="recommendations">
-        <h2>Recommendations</h2>
-        <div style="clear:both;"></div>
-        <div class="all_recommendations" id="all_recommendations">
-            <div class="recommendation">
-                <span>&#8220;</span>
-                Web Apps: Taha crafts seamless web experiences using React and Node.js, with captivating UI and engaging
-                functionalities.His user interactong apps iNoteBook, Text-Reformer, and Newsicles makes him worthy
-                <span>&#8221;</span>
-            </div>
-            <div class="recommendation">
-                <span>&#8220;</span>
-                iNoteBook Web App: Taha's backend mastery shines, offering secure note-taking and MongoDB Compass
-                integration for an exceptional user experience.
-                <span>&#8221;</span>
-            </div>
-            <div class="recommendation">
-                <span>&#8220;</span>
-                Game Development: Taha's talents extend beyond web apps, as evidenced by his remarkable game creations -
-                Pong and Vertex. He has a flair for coding in C and C++ language with OOP and utilizing the SFML
-                library.The login and signup features makes user more comfortable.
-                <span>&#8221;</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recommendation Form -->
-    <section id="contact">
-        <div class="flex_center">
-            <fieldset>
-                <legend class="introduction">Leave a Recommendation</legend>
-                <input type="text" placeholder="Name (Optional)"> <br />
-                <textarea id="new_recommendation" cols="500" rows="10" placeholder="Message"></textarea>
-                <div class="flex_center">
-                    <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
-                </div>
-            </fieldset>
-        </div>
-    </section>
-
-    <div class="iconbutton">
-        <a href="#home">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-                width="63px">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg> </a>
+        </nav>
     </div>
 
-    <div class="popup" id="popup" class="flex_center">
-        <img src="html_finalprojimages/checkmark--outline.svg" />
-        <h3>Glad to have your precious words : Thanks !</h3>
-        <button onclick="showPopup(false)">Welcome</button>
+    <div id="wrapper" class="mx-auto px-0 py-2 my-2 gap-6 max-w-[1300px] w-full space-y-10">
+        <section id="hero">
+            <div
+                class="flex flex-col md:flex-row items-center justify-around bg-bgTheme-dark text-white my-10 mx-2 py-5 md:py-0 rounded-md shadow-2xl shadow-white">
+                <div id="leftHero" class="m-4">
+                    <img src="./html_finalprojimages/myPic.jpg" alt="Profile picture"
+                        class="max-h-[25rem] h-[18rem] md:h-auto md:rounded-sm rounded-full border border-white" style="box-shadow: rgba(255, 255, 255, 0.5) 0px 2px 5px 2px;">
+                </div>
+                <div id="rightHero" class="md:max-w-[70%] my-4 md:my-auto text-center md:text-start mx-2">
+                    <h1 class="text-4xl my-4">Hi, I'm Taha !</h1>
+                    <p class="text-center md:text-start">
+                        Highly motivated Computer Science student at NUCES-FAST Karachi. Currently I’ve completed my 4th semester with a strong academic record. I'm passionate about technology and possess a strong foundation in computer science principles. I've actively participated in various projects (refer to the Projects section) that allowed me to gain practical experience and hone my problem-solving skills. Eager to learn and grow in a fast-paced environment. I'm a sincere and dedicated individual who thrives in collaborative settings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="bg-bgTheme-dark text-white flex flex-col justify-center rounded-md mx-2 pt-4 pb-6">
+                <div id="skillsFirst" class="text-center p-2 my-4 max-w-[80%] mx-auto">
+                    <h1 class="text-4xl">Skills</h1>
+                    <p>I've tried best to invest my precious time in gaining valuable skills. <i class="font-semibold">Scroll horizontal to view more carousels</i>.</p>
+                </div>
+                <div id="skillsSecond" class="my-2 mx-4 p-3 overflow-hidden hover:overflow-x-scroll scroll-m-60">
+                    <div class="flex flex-row w-max justify-center scale-100 gap-24">
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/react.png" alt="Node js" class="max-h-24 h-full">
+                        <p>It feels pleasure when you can implement websites using most popular front-end frameworks
+                            like React js. I love to develop websites using React js because of its modularity,hooks,
+                            states and other features.</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/c c++.png" alt="C/C++" class="max-h-24 h-full">
+                        <p>Experience of more than 2 years. We've used this language in our bachelors career till now
+                            for different perpectives</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/CSS3.png" alt="CSS3" class="max-h-24 h-full">
+                        <p>Familiarity of more than 2 years. In the due journey of CS, like all students, I can provide
+                            simple but decent and professional design to my webpage</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/html5.png" alt="HTML 5" class="max-h-24 h-full">
+                        <p>Familiarity of more than 2 years. I'm implementing different websites for different purposes
+                            since the start of my CS journey</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/java.png" alt="Java" class="max-h-24 h-full">
+                        <p>When it comes to Object-oriented language, java, I can implement simple and effiecient code
+                            snippets of java along with considering all the concepts of OOP</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/js.jpeg" alt="Javascript" class="max-h-24 h-full">
+                        <p>The webpages can't be functional without Javascript. I've been using this language for more
+                            than 1 year, making website functional, fetching data, updating DOM</p>
+                    </div>
+                    <div id="card"
+                        class="flex flex-col justify-center items-center gap-4 max-w-[80vw] md:max-w-[20rem] bg-[#fffffff5] text-bgTheme-dark rounded-md py-6 px-4 mx-2 text-center hover:bg-white hover:shadow-lg hover:shadow-bgTheme-light duration-200">
+                        <img src="./html_finalprojimages/node.png" alt="Node js" class="max-h-24 h-full">
+                        <p>The dynamic applications can't be rendered without a backend server. With Node js, I've
+                            established local servers to send data from database upon requests</p>
+                    </div>
+                    
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="bg-bgTheme-dark rounded-lg mx-2 my-4 py-6 flex flex-col items-center gap-6">
+                <div class="text-center space-y-5 max-w-[80%]">
+                   <h1 class="text-4xl text-white">Projects</h1>
+                   <p>I've gained experience of developing different projects with different goals using different technoligies. Some of them are below. <i class="font-semibold">Click on the headings</i> to naviagte to details</p>
+                </div>
+
+                <div class="max-w-[80%] mx-auto my-2 flex flex-wrap-reverse gap-4 justify-around items-center bg-[#fffffff5] text-bgTheme-dark hover:shadow-md hover:shadow-white hover:bg-white rounded-lg py-4 px-2">
+                    <div id="textProj" class="min-[1075px]:max-w-[50%] max-[1075px]:text-center my-6 p-2">
+                        <h1 class="text-2xl font-semibold text-bgTheme-dark"><a href="" target="_blank" class="border border-transparent hover:border-b-bgTheme-dark duration-200"> Pong Game </a></h1>
+                        <p>Being the first ever programming and developing experience, this project was subjected to very much excitement and quality of work. It's a CLI based game with different user profiles designed in C language. Users have to use a pad to controll the ball to break all the blocks or to defeat the opponent</p>
+                    </div>
+                    <div id="projImg" class="min-[1075px]:max-w-[40%] my-2">
+                        <img src="./html_finalprojimages/pongGame.png" alt="Game image" class="h-full max-h-[15rem] border-1 border-bgTheme-dark shadow shadow-bgTheme-dark rounded-md">
+                    </div>
+                </div>
+
+                <div class="max-w-[80%] mx-auto my-2 flex flex-wrap-reverse gap-4 justify-around items-center bg-[#fffffff5] text-bgTheme-dark hover:shadow-md hover:shadow-white hover:bg-white rounded-lg py-4 px-2">
+                    <div id="textProj" class="min-[1075px]:max-w-[50%] max-[1075px]:text-center my-6 p-2">
+                        <h1 class="text-2xl font-semibold text-bgTheme-dark"><a href="" target="_blank" class="border border-transparent hover:border-b-bgTheme-dark duration-200">Vertex</a></h1>
+                        <p>Vertex , a platformer based game, resides on the concepts of Object-oriented programming. Here we moved one step forward to develop a GUI utilizing SFML library. This game has different characters and a very well formation</p>
+                    </div>
+                    <div id="projImg" class="min-[1075px]:max-w-[40%] my-2">
+                        <img src="./html_finalprojimages/vertex.jpg" alt="Game image" class="h-full max-h-[15rem] border-1 border-bgTheme-dark shadow shadow-bgTheme-dark rounded-md">
+                    </div>
+                </div>
+
+                <div class="max-w-[80%] mx-auto my-2 flex flex-wrap-reverse gap-4 justify-around items-center bg-[#fffffff5] text-bgTheme-dark hover:shadow-md hover:shadow-white hover:bg-white rounded-lg py-4 px-2">
+                    <div id="textProj" class="min-[1075px]:max-w-[50%] max-[1075px]:text-center my-6 p-2">
+                        <h1 class="text-2xl font-semibold text-bgTheme-dark"><a href="https://mtkinverse.github.io/utility-app/" target="_blank" class="border border-transparent hover:border-b-bgTheme-dark duration-200">BillEase</a></h1>
+                        <p>BillEase is a web-app designed using <b>React js</b>. With the help of this app, you can track different types of slips, download, and use them. BillEase is also mobile friendly to enable portable use. However, it's new features are under process</p>
+                    </div>
+                    <div id="projImg" class="min-[1075px]:max-w-[40%] my-2 flex gap-2">
+                        <img src="./html_finalprojimages/billEase2.png" alt="Web Image" class="h-full max-h-[15rem] border-1 border-bgTheme-dark shadow shadow-bgTheme-dark rounded-md">
+                    </div>
+                </div>
+
+                <div class="max-w-[80%] mx-auto my-2 flex flex-wrap-reverse gap-4 justify-around items-center bg-[#fffffff5] text-bgTheme-dark hover:shadow-md hover:shadow-white hover:bg-white rounded-lg py-4 px-2">
+                    <div id="textProj" class="min-[1075px]:max-w-[50%] max-[1075px]:text-center my-6 p-2">
+                        <h1 class="text-2xl font-semibold text-bgTheme-dark"><a href="" target="_blank" class="border border-transparent hover:border-b-bgTheme-dark duration-200">Konnect app</a></h1>
+                        <p>A Computer Scientist become more familiar with computing problems and solutions when it gets familiar with different data structures. This app uses different data structures to create an efficient network that connects people to solve problems. Graphs are a key data structure that makes this network work. Users can log in or sign up to use the app and post their problems. They can also help others by responding to their problems.</p>
+                    </div>
+                    <div id="projImg" class="min-[1075px]:max-w-[40%] my-2">
+                        <img src="./html_finalprojimages/konnect.png" alt="Game image" class="h-full max-h-[15rem] border-1 border-bgTheme-dark shadow shadow-bgTheme-dark rounded-md">
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+
     </div>
+
+    <div class="bg-bgTheme-dark w-full">
+        <footer class="max-w-[1300px] mx-auto">
+            <div class="flex flex-wrap space-y-0 justify-between">
+                <div id="footerLeft" class="flex p-2 my-auto mx-2 max-[1000px]:w-full max-[1000px]:text-center">
+                    <ul class="flex flex-col mx-auto max-[404px]:space-y-2 justify-around">
+                        <li class="text-3xl font-semibold">Muhammad Taha Khan</li>
+                        <li class="text-3xl font-semibold">CS Junior @ FAST</li>
+                    </ul>
+                </div>
+                <div id="footerRight" class="flex p-2 my-auto mx-2 max-[1000px]:w-full max-[1000px]:text-center">
+                    <ul class="mx-auto my-auto">
+                        <li class="text-2xl max-[1000px]:my-2 font-semibold">Contact:</li>
+                        <ul class="flex max-[596px]:flex-col gap-2 min-[596px]:gap-6 text-xl">
+                            <li>mtkinverse@gmail.com</li>
+                            <li>+92 3062992398</li>
+                            <li><a href="https://www.linkedin.com/in/taha-khan-259106257/">Linkedin</a></li>
+                            <li><a href="https://github.com/mtkinverse/">Github</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
 </body>
 
 </html>
