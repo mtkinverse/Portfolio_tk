@@ -5,8 +5,13 @@ module.exports = {
     extend: {
       colors:{
         bgTheme:{
-          'light':'#799ebe',
-          'dark':'#205187',
+          // Blue shades
+          'light':'#407ba7',
+          'dark':'#013a63',
+          // Green shades
+          // 'light':'#a3b18a',
+          // 'dark':'#3a5a40',
+          'fadedLight':'#fffffff5'
         }
       }
     },
