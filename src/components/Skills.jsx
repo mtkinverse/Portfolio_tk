@@ -1,7 +1,7 @@
 const Skills = ()=>{
 
     const skills = [
-        {label : 'C/C++', picture:'/c c++.png', text:'Experience of more than 2 years. We\'ve used this language in our bachelors career till now for different perpectives'},
+        {label : 'C/C++', picture:'/c-cpp.png', text:'Experience of more than 2 years. We\'ve used this language in our bachelors career till now for different perpectives'},
         {label : 'React.js', picture: '/react.png', text : 'Building websites with React.js is a pleasure. I love its modular structure, hooks, state management, and features that make development easy and enjoyable.'},
         {label : 'HTML 5', picture:'/html5.png', text:'Familiarity of more than 2 years. I\'m implementing different websites for different purposes since the start of my CS journey'},
         {label : 'CSS3', picture:'/CSS3.png', text:'Familiarity of more than 2 years. In the due journey of CS, like all students, I can provide simple but decent and professional design to my webpage'},
