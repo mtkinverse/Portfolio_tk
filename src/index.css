@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.outerWrap{
+    @apply w-full flex justify-center;
+}
+
+#skillsSecond::-webkit-scrollbar {
+    height: 0.2rem;
+  }
+  
+#skillsSecond::-webkit-scrollbar-thumb {
+  background-color: #fffffff5;
+  border-radius: 10px;
+}
+.fadedLight{
+    @apply bg-gradient-to-r from-white to-slate-300 text-bgTheme-dark hover:to-white cursor-pointer active:bg-gradient-to-tl active:to-slate-300
+}
