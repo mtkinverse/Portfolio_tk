@@ -77,8 +77,8 @@ const Experience = () => {
   const visible = showMore ? experienceData.items : topItems;
 
   return (
-    <section id="experience" className="py-16 px-4">
-      <div className="max-w-site mx-auto max-w-3xl">
+    <section id="experience" className="py-20 px-6">
+      <div className="max-w-site mx-auto">
         <SectionHeader
           title="Experience"
           subtitle="Professional track record — building systems that matter"

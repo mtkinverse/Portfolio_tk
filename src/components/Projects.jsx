@@ -10,9 +10,9 @@ const ProjectCard = ({ project }) => (
     {/* Project image */}
     <div className="relative h-44 bg-bgTheme-dark overflow-hidden">
       <img
-        src={project.picture}
+        src={project.picture || project.isPrivate || '/projects/github.png'}
         alt={project.label}
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover ${!project.picture ? 'filter brightness-50 blur-sm' : ''}`}
         onError={(e) => { e.currentTarget.style.display = 'none'; }}
       />
       {project.isPrivate && (
@@ -93,7 +93,7 @@ const Projects = () => {
   const visible = showMore ? projectsData.items : topItems;
 
   return (
-    <section id="projects" className="py-16 px-4">
+    <section id="projects" className="py-20 px-6">
       <div className="max-w-site mx-auto">
         <SectionHeader
           title="Projects"

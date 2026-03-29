@@ -1,9 +1,9 @@
 const projects = {
-  topItems: 3,
+  topItems: 4,
   items: [
     {
       label: 'Multi-Tenant SaaS Backend',
-      picture: '/projects/project-backend-api.png',
+      picture: null,
       tech: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Kubernetes', 'RabbitMQ'],
       gitLink: null,
       liveLink: null,
@@ -20,7 +20,7 @@ const projects = {
     },
     {
       label: 'AI RAG Pipeline with Knowledge Graphs',
-      picture: '/projects/project-ai-pipeline.png',
+      picture: null,
       tech: ['Python', 'LangGraph', 'CrewAI', 'pgvector', 'Neo4j', 'Apache AGE'],
       gitLink: null,
       liveLink: null,
@@ -32,6 +32,37 @@ const projects = {
         'Knowledge graph integration (Neo4j)',
         'Multi-agent orchestration via CrewAI',
         'LangGraph workflow engine',
+      ],
+    },
+    {
+      label: 'InventorySync',
+      picture: null,
+      tech: ['Node.js', 'JavaScript', 'SQLite', 'RabbitMQ'],
+      gitLink: 'https://github.com/mtkinverse/InventorySync',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'Inventory data synchronization system built as a case study solution for Bazar.com. Features a modular architecture with dedicated middleware, publisher, and background worker processes for reliable, event-driven inventory updates.',
+      highlights: [
+        'Event-driven inventory sync',
+        'Background worker processes',
+        'Modular middleware architecture',
+        'Real-world case study solution',
+      ],
+    },
+    {
+      label: 'SharZii',
+      picture: null,
+      tech: ['Node.js', 'JavaScript', 'Python', 'WebRTC'],
+      gitLink: 'https://github.com/mtkinverse/SharZii',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'An instant real-time messaging application supporting both text and voice communication. Combines a Node.js backend with Python services to deliver low-latency chat and voice features over a unified real-time infrastructure.',
+      highlights: [
+        'Real-time text & voice messaging',
+        'Node.js + Python dual backend',
+        'Low-latency communication stack',
       ],
     },
     {
@@ -81,6 +112,54 @@ const projects = {
       description:
         'CLI pong game with persistent user profiles written in pure C. A foundational project demonstrating systems programming, file I/O, and terminal-based UI.',
       highlights: ['Persistent user profiles', 'CLI interface', 'Pure C systems programming'],
+    },
+    // — Example implementations: focused reference projects demonstrating specific architectural patterns —
+    {
+      label: 'Order Management System',
+      picture: null,
+      tech: ['Node.js', 'RabbitMQ', 'Docker', 'Microservices'],
+      gitLink: 'https://github.com/mtkinverse/orderManagement',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'Example implementation of a microservices-based asynchronous order processing pipeline. Five independent services communicate via RabbitMQ with event-driven workflows, dead-letter queue handling, automatic retry logic, audit logging, and real-time customer status notifications.',
+      highlights: [
+        'Five decoupled microservices',
+        'Dead-letter queue + retry logic',
+        'Audit logging for compliance',
+        'Docker Compose orchestration',
+      ],
+    },
+    {
+      label: 'gRPC Inter-Service Communication',
+      picture: null,
+      tech: ['Node.js', 'gRPC', 'Protocol Buffers'],
+      gitLink: 'https://github.com/mtkinverse/gRPC',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'Example implementation demonstrating gRPC as a low-latency alternative to REST for inter-service communication. Covers service definitions with Protocol Buffers, unary and streaming RPCs, and practical comparison against REST overhead.',
+      highlights: [
+        'Protocol Buffers service definitions',
+        'Unary & streaming RPCs',
+        'Latency benchmark vs REST',
+      ],
+    },
+    {
+      label: 'Neo4j Knowledge Graph',
+      picture: null,
+      tech: ['Python', 'Neo4j', 'Docker', 'APOC'],
+      gitLink: 'https://github.com/mtkinverse/new4jExampleImplementation',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'Example implementation of automated knowledge graph construction from documents (PDF, Excel, Word) using Neo4j 5. Features a graph query API, APOC plugin integration, Neo4j Bloom visualization, and Dockerized setup with persistent volumes.',
+      highlights: [
+        'Auto knowledge graph from documents',
+        'Graph query API with Cypher',
+        'Neo4j Bloom visualization',
+        'Extensible entity type system',
+      ],
     },
   ],
 };

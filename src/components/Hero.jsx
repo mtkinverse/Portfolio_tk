@@ -8,7 +8,7 @@ const metrics = [
 ];
 
 const Hero = () => (
-  <section id="hero" className="py-16 px-4">
+  <section id="hero" className="py-20 px-6">
     <div className="max-w-site mx-auto">
       <div className="flex flex-col min-[875px]:flex-row items-center gap-10 bg-bgTheme-dark rounded-2xl shadow-2xl shadow-black/40 px-8 py-12 min-[875px]:px-14">
 

@@ -12,10 +12,10 @@ const Skills = () => {
   const visible = showMore ? skillsData.items : topItems;
 
   return (
-    <section id="skills" className="py-16 px-4">
+    <section id="skills" className="py-20 px-6">
       <div className="max-w-site mx-auto">
         <SectionHeader
-          title="Skills"
+          title="Technical Skills"
           subtitle="Languages and frameworks I build with"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">

@@ -28,13 +28,11 @@ function App() {
     <>
       <Navbar />
       <main className="bg-bgTheme-light min-h-screen">
-        <div className="max-w-site mx-auto">
-          <Hero />
-          <Experience />
-          <Skills />
-          <Tools />
-          <Projects />
-        </div>
+        <Hero />
+        <Experience />
+        <Skills />
+        <Tools />
+        <Projects />
       </main>
       <Footer footerRef={footerRef} />
 
