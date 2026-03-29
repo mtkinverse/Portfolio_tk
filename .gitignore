@@ -1,2 +1,9 @@
 /node_modules
 /package-lock.json
+*DE.md
+*.tex
+/dist
+/build
+/coverage
+/tsconfig.tsbuildinfo
+/.vscode

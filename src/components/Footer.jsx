@@ -1,28 +1,57 @@
-const Footer = ({footerRef}) => {
-    return (
-        <div className="bg-bgTheme-dark w-full" ref={footerRef}>
-            <footer className="max-w-[1300px] mx-auto">
-                <div className="flex flex-wrap space-y-0 justify-between">
-                    <div id="footerLeft" className="flex p-2 my-auto mx-2 max-[1000px]:w-full max-[1000px]:text-center">
-                        <ul className="flex flex-col mx-auto max-[404px]:space-y-2 justify-around">
-                            <li className="text-3xl font-semibold">Muhammad Taha Khan</li>
-                            <li className="text-3xl font-semibold">CS Junior @ FAST</li>
-                        </ul>
-                    </div>
-                    <div id="footerRight" className="flex p-2 my-auto mx-2 max-[1000px]:w-full max-[1000px]:text-center">
-                        <ul className="mx-auto my-auto">
-                            <li className="text-2xl max-[1000px]:my-2 font-semibold">Contact:</li>
-                            <ul className="flex max-[596px]:flex-col gap-2 min-[596px]:gap-6 text-xl">
-                                <li>mtkinverse@gmail.com</li>
-                                <li>+92 3062992398</li>
-                                <li><a href="https://www.linkedin.com/in/taha-khan-259106257/" target="_blank">Linkedin</a></li>
-                                <li><a href="https://github.com/mtkinverse/" target="_blank">Github</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { SiFiverr } from 'react-icons/si';
+import { socialLinks } from '../config/social';
+
+const iconMap = { FaGithub, FaLinkedin, SiFiverr };
+
+const Footer = ({ footerRef }) => (
+  <div className="bg-bgTheme-dark w-full border-t border-bgTheme-light/20" ref={footerRef}>
+    <footer className="max-w-site mx-auto px-6 py-10">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+
+        {/* Left — identity */}
+        <div className="text-center md:text-left">
+          <p className="text-white font-bold text-xl">Muhammad Taha Khan</p>
+          <p className="text-textTheme-muted text-sm mt-1">
+            Backend Developer &nbsp;·&nbsp; BS-CS Expected June 2026
+          </p>
         </div>
-    );
-}
+
+        {/* Center — contact */}
+        <div className="flex flex-col items-center gap-2 text-sm text-textTheme-muted">
+          <a href="mailto:mtkinverse@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+            <FaEnvelope size={13} /> mtkinverse@gmail.com
+          </a>
+          <a href="tel:+923062992398" className="flex items-center gap-2 hover:text-white transition-colors">
+            <FaPhone size={13} /> +92 306 2992398
+          </a>
+        </div>
+
+        {/* Right — social icons */}
+        <div className="flex items-center gap-4">
+          {socialLinks.map(({ label, url, icon }) => {
+            const Icon = iconMap[icon];
+            return Icon ? (
+              <a
+                key={label}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-textTheme-muted hover:text-white transition-colors duration-200"
+              >
+                <Icon size={22} />
+              </a>
+            ) : null;
+          })}
+        </div>
+      </div>
+
+      <p className="text-center text-textTheme-muted text-xs mt-8">
+        © {new Date().getFullYear()} Muhammad Taha Khan. All rights reserved.
+      </p>
+    </footer>
+  </div>
+);
+
 export default Footer;

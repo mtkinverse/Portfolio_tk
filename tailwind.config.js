@@ -1,3 +1,5 @@
+import theme from './src/config/theme.js';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,19 +8,24 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        bgTheme:{
-          // Blue shades
-          'light':'#407ba7',
-          'dark':'#013a63',
-          // Green shades
-          // 'light':'#a3b18a',
-          // 'dark':'#3a5a40',
-          'fadedLight':'#fffffff5'
-        }
-      }
+      colors: {
+        bgTheme: {
+          dark:       theme.colors.bgDark,
+          light:      theme.colors.bgLight,
+          card:       theme.colors.bgCard,
+          accent:     theme.colors.accent,
+          fadedLight: theme.colors.fadedLight,
+        },
+        textTheme: {
+          primary: theme.colors.textPrimary,
+          muted:   theme.colors.textMuted,
+          onLight: theme.colors.textOnLight,
+        },
+      },
+      maxWidth: {
+        site: theme.maxWidth,
+      },
     },
   },
   plugins: [],
-}
-
+};
