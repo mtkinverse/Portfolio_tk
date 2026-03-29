@@ -24,7 +24,7 @@ const experience = {
     {
       company: 'The Bridge of Hopes',
       role: 'Frontend Lead & Research Assistant',
-      period: 'June 2024 – Feb 2025',
+      period: 'June 2024 – Jan 2026',
       type: 'Volunteer',
       location: 'Karachi, Pakistan',
       isCurrent: false,
