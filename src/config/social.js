@@ -7,12 +7,12 @@ export const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/taha-khan-259106257/',
+    url: 'https://www.linkedin.com/in/taha-khan-system-thinker/',
     icon: 'FaLinkedin',
   },
   {
     label: 'Fiverr',
-    url: 'https://www.fiverr.com/',   // replace with actual Fiverr profile URL
+    url: 'https://www.fiverr.com/mtkinverse',   // replace with actual Fiverr profile URL
     icon: 'SiFiverr',
   },
 ];
