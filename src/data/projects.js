@@ -35,6 +35,41 @@ const projects = {
       ],
     },
     {
+      label: 'FoodOnTheGo',
+      picture: '/projects/foodOnTheGo.png',
+      tech: ['Node.js', 'React.js', 'SQL'],
+      gitLink: 'https://github.com/abdullahedhiii/FoodOnTheGo/tree/code',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'Inventory data synchronization system built as a case study solution for Bazar.com. Features a modular architecture with dedicated middleware, publisher, and background worker processes for reliable, event-driven inventory updates.',
+      highlights: [
+        'Role based views and access control',
+        'Restaurant management',
+        'Order processing tracking',
+        'Order Placement and Management',
+        'Order Devlivery and Tracking',
+        'All in one platform for food ordering, delivery, and restaurant management',
+      ],
+    },
+    {
+      label: 'Data Odyssey',
+      picture: '/projects/dataOdyssey.png',
+      tech: ['Node.js', 'JavaScript', 'MySQL', 'OneCompiler'],
+      gitLink: 'https://github.com/abdullahedhiii/DataOdysseyWebsite',
+      liveLink: null,
+      isPrivate: false,
+      description:
+        'This website was designed to host an SQL query competition where users can participate, compete with others, and track their progress. The platform allows users to submit SQL queries, unlock achievements, and climb through the leaderboard. The system is secure, intuitive, and provides a seamless experience for both participants and organizers.',
+      highlights: [
+        'Third-party SQL execution via OneCompiler API',
+        'Solution validation and scoring engine',
+        'Lived leaderboard with real-time updates',
+        'Lived and Tested platform',
+        'Real-world case study solution',
+      ],
+    },
+    {
       label: 'InventorySync',
       picture: null,
       tech: ['Node.js', 'JavaScript', 'SQLite', 'RabbitMQ'],
@@ -52,7 +87,7 @@ const projects = {
     },
     {
       label: 'SharZii',
-      picture: null,
+      picture: 'projects/sharzii.png',
       tech: ['Node.js', 'JavaScript', 'Python', 'WebRTC'],
       gitLink: 'https://github.com/mtkinverse/SharZii',
       liveLink: null,
