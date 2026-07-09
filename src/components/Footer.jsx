@@ -8,21 +8,21 @@ const Footer = ({ footerRef }) => (
   <div className="bg-bgTheme-dark w-full border-t border-bgTheme-light/20" ref={footerRef}>
     <footer className="max-w-site mx-auto px-6 py-12">
 
-      {/* Three-column grid — all centered */}
+      {/* Three-column grid; all centered */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center text-center">
 
         {/* Identity */}
         <div>
           <p className="text-white font-bold text-lg">Muhammad Taha Khan</p>
           <p className="text-textTheme-muted text-sm mt-1 leading-snug">
-            Backend Developer<br />BS-CS · Expected June 2026
+            Backend Developer<br />BS-CS · NUCES-FAST · Graduated 2026
           </p>
         </div>
 
         {/* Contact */}
         <div className="flex flex-col items-center gap-2 text-sm text-textTheme-muted">
-          <a href="mailto:mtkinverse@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
-            <FaEnvelope size={13} /> mtkinverse@gmail.com
+          <a href="mailto:taha.1405.khan@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+            <FaEnvelope size={13} /> taha.1405.khan@gmail.com
           </a>
           <a href="tel:+923062992398" className="flex items-center gap-2 hover:text-white transition-colors">
             <FaPhone size={13} /> +92 306 2992398

@@ -55,7 +55,7 @@ const ProjectCard = ({ project }) => (
       <div className="flex gap-3 mt-auto pt-3 border-t border-bgTheme-light/20">
         {project.isPrivate ? (
           <span className="flex items-center gap-1.5 text-xs text-textTheme-muted">
-            <FaLock size={11} /> NDA — source not public
+            <FaLock size={11} /> NDA: source not public
           </span>
         ) : (
           <>
@@ -97,7 +97,7 @@ const Projects = () => {
       <div className="max-w-site mx-auto">
         <SectionHeader
           title="Projects"
-          subtitle="From architecture to production — selected work"
+          subtitle="From architecture to production: selected work"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {visible.map((project) => (

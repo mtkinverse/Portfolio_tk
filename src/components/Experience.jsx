@@ -81,7 +81,7 @@ const Experience = () => {
       <div className="max-w-site mx-auto">
         <SectionHeader
           title="Experience"
-          subtitle="Professional track record — building systems that matter"
+          subtitle="Professional track record: building systems that matter"
         />
         <div className="mt-8">
           {visible.map((entry, index) => (
