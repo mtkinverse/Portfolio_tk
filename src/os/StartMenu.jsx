@@ -45,7 +45,7 @@ export default function StartMenu() {
           >
             <div className="mb-3 flex items-center gap-3 border-b border-os-hairline pb-3">
               <img
-                src={profile.portrait}
+                src={profile.avatar}
                 alt=""
                 className="h-11 w-11 rounded-lg border border-os-hairline object-cover"
               />

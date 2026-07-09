@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useReducedMotion } from 'framer-motion';
+import HeroName from './HeroName';
+import HeroPortrait from './HeroPortrait';
 
 // Ambient "distributed system" wallpaper: drifting nodes with proximity edges.
 // The RAF loop lives entirely outside React — the component renders once.
@@ -119,6 +121,10 @@ export default function Wallpaper() {
             'radial-gradient(1200px 700px at 30% 20%, var(--os-wallpaper-bg-a), var(--os-wallpaper-bg-b) 75%)',
         }}
       />
+      {/* Engraved name + graded portrait sit between the gradient and the
+          node canvas, so the graph draws across both — they ARE the wallpaper. */}
+      <HeroName />
+      <HeroPortrait />
       <canvas ref={canvasRef} aria-hidden className="absolute inset-0 pointer-events-none" />
     </>
   );

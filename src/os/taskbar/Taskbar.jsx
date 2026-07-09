@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaSearch, FaRegMoon, FaRegSun, FaThLarge } from 'react-icons/fa';
-import { selectAllWindows, selectTopmostId } from '../../store/windowsSlice';
+import { selectAllWindows, selectTopmostId, openApp } from '../../store/windowsSlice';
 import { toggleStart, togglePalette, toggleTheme, selectTheme, selectStartOpen } from '../../store/uiSlice';
+import profile from '../../data/profile';
 import TaskbarItem from './TaskbarItem';
 
 function Clock() {
@@ -70,6 +71,27 @@ export default function Taskbar() {
         className={chromeBtn}
       >
         {theme === 'dark' ? <FaRegSun size={14} /> : <FaRegMoon size={14} />}
+      </button>
+
+      {/* User avatar — the OS-authentic home for the portrait; opens Contact */}
+      <button
+        type="button"
+        aria-label={`Contact ${profile.name}`}
+        onClick={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          dispatch(
+            openApp('contact', {
+              origin: { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 },
+            })
+          );
+        }}
+        className="flex h-9 items-center rounded-lg px-1.5 transition-colors duration-150 hover:bg-[var(--os-glass)]"
+      >
+        <img
+          src={profile.avatar}
+          alt=""
+          className="h-7 w-7 rounded-full border border-os-hairline object-cover"
+        />
       </button>
 
       <Clock />

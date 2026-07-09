@@ -7,7 +7,10 @@ const profile = {
   title: 'Associate Backend Developer',
   org: '360XpertsSolutions',
   education: 'BS-CS · NUCES-FAST · Graduated June 2026',
-  portrait: '/myPic.jpg',
+  // Background-removed RGBA cutout (transparent PNG) — hero wallpaper figure
+  portrait: '/myPic.png',
+  // Regular photo (background intact) — small round avatar in taskbar/Start
+  avatar: '/myPic-profileIcon.jpg',
   email: 'taha.1405.khan@gmail.com',
   phone: '+92 306 2992398',
   stats: [
