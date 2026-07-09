@@ -93,12 +93,24 @@ const windowsSlice = createSlice({
         w.y = y;
       }
     },
+    // Re-fit every window when the viewport shrinks so no title bar can end
+    // up unreachable.
+    clampWindows(state, action) {
+      const { vw, vh } = action.payload;
+      for (const id of state.ids) {
+        const w = state.entities[id];
+        w.w = Math.min(w.w, vw - 32);
+        w.h = Math.min(w.h, vh - TASKBAR_H - 24);
+        w.x = clamp(w.x, 8, vw - w.w - 8);
+        w.y = clamp(w.y, 8, vh - TASKBAR_H - w.h - 4);
+      }
+    },
   },
 });
 
 export const {
   openApp, closeApp, destroyWindow, focusWindow,
-  minimizeWindow, toggleMaximize, moveWindow,
+  minimizeWindow, toggleMaximize, moveWindow, clampWindows,
 } = windowsSlice.actions;
 
 const selectors = adapter.getSelectors((s) => s.windows);

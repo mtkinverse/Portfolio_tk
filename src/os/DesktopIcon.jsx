@@ -24,6 +24,11 @@ export default function DesktopIcon({ app }) {
     <motion.button
       type="button"
       onDoubleClick={open}
+      // Touch devices don't produce reliable dblclick events — a single tap
+      // opens the folder there (mouse keeps the authentic double-click).
+      onPointerUp={(e) => {
+        if (e.pointerType === 'touch' || e.pointerType === 'pen') open(e);
+      }}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();

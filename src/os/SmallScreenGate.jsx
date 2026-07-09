@@ -9,7 +9,7 @@ export default function SmallScreenGate() {
     <div className="relative z-10 flex h-full items-center justify-center p-6 md:hidden">
       <div className="os-glass w-full max-w-sm rounded-2xl p-6 text-center shadow-window">
         <img
-          src={profile.portrait}
+          src={profile.avatar}
           alt={profile.name}
           className="mx-auto h-24 w-24 rounded-2xl border border-os-hairline object-cover"
         />

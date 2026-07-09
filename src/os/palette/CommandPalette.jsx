@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 import { openApp } from '../../store/windowsSlice';
-import { setPalette, setFocusItem, selectPaletteOpen } from '../../store/uiSlice';
+import { setPalette, setFocusItem, selectPaletteOpen, selectPaletteSeed } from '../../store/uiSlice';
 import { getApp } from '../apps/appMeta';
 import { getIcon } from '../../config/iconMap';
 import useSearch from '../search/useSearch';
@@ -11,6 +11,7 @@ import useSearch from '../search/useSearch';
 export default function CommandPalette() {
   const dispatch = useDispatch();
   const open = useSelector(selectPaletteOpen);
+  const seed = useSelector(selectPaletteSeed);
   const reduced = useReducedMotion();
   const inputRef = useRef(null);
   const [query, setQuery] = useState('');
@@ -29,11 +30,12 @@ export default function CommandPalette() {
 
   useEffect(() => {
     if (open) {
-      setQuery('');
+      setQuery(seed ?? '');
       setCursor(0);
       // Focus after the panel mounts.
       requestAnimationFrame(() => inputRef.current?.focus());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   useEffect(() => setCursor(0), [query]);
