@@ -1,8 +1,6 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
-import { SiFiverr } from 'react-icons/si';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import { socialLinks } from '../config/social';
-
-const iconMap = { FaGithub, FaLinkedin, SiFiverr };
+import { iconMap } from '../config/iconMap';
 
 const Footer = ({ footerRef }) => (
   <div className="bg-bgTheme-dark w-full border-t border-bgTheme-light/20" ref={footerRef}>
