@@ -2,7 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scroll for anchor navigation */
-html {
-  scroll-behavior: smooth;
+/* ---------------------------------------------------------------------------
+   OS design tokens (runtime theme via [data-theme] on <html>)
+   Seed palette documented in src/config/theme.js — keep the two in sync.
+--------------------------------------------------------------------------- */
+:root,
+:root[data-theme='dark'] {
+  --os-abyss: #070b12;
+  --os-base: #0b1120;
+  --os-surface: #131a2b;
+  --os-raised: #1a2338;
+  --os-glass: rgba(255, 255, 255, 0.06);
+  --os-glass-strong: rgba(16, 23, 39, 0.72);
+  --os-hairline: rgba(255, 255, 255, 0.1);
+  --os-hairline-strong: rgba(255, 255, 255, 0.16);
+  --os-accent: #4c8dff;
+  --os-accent-soft: #6ea8ff;
+  --os-online: #3fe0a5;
+  --os-warn: #f5b567;
+  --os-text: #e7ecf5;
+  --os-text-muted: #93a1b8;
+  --os-text-dim: #64748b;
+  --os-shadow-window: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --os-wallpaper-node: 76, 141, 255;
+  --os-wallpaper-bg-a: #0d1526;
+  --os-wallpaper-bg-b: #070b12;
+}
+
+:root[data-theme='light'] {
+  --os-abyss: #dfe6f2;
+  --os-base: #eef2f8;
+  --os-surface: #ffffff;
+  --os-raised: #f4f7fc;
+  --os-glass: rgba(255, 255, 255, 0.6);
+  --os-glass-strong: rgba(255, 255, 255, 0.78);
+  --os-hairline: rgba(15, 23, 42, 0.12);
+  --os-hairline-strong: rgba(15, 23, 42, 0.2);
+  --os-accent: #2f6fe4;
+  --os-accent-soft: #4c8dff;
+  --os-online: #14b487;
+  --os-warn: #c67f2b;
+  --os-text: #0b1120;
+  --os-text-muted: #475569;
+  --os-text-dim: #7c8aa0;
+  --os-shadow-window: 0 24px 60px rgba(15, 23, 42, 0.22);
+  --os-wallpaper-node: 47, 111, 228;
+  --os-wallpaper-bg-a: #e6ecf7;
+  --os-wallpaper-bg-b: #d6e0f0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: var(--os-base);
+  color: var(--os-text);
+  font-family: -apple-system, 'Segoe UI', system-ui, 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glass surfaces — chrome only (windows, taskbar, menus), never per list item */
+.os-glass {
+  background: var(--os-glass-strong);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--os-hairline);
+}
+
+.os-panel {
+  background: var(--os-surface);
+  border: 1px solid var(--os-hairline);
+}
+
+.os-tile {
+  background: var(--os-glass);
+  border: 1px solid var(--os-hairline);
+}
+
+/* Scrollbars inside app windows */
+.os-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--os-hairline-strong) transparent;
+}
+.os-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.os-scroll::-webkit-scrollbar-thumb {
+  background: var(--os-hairline-strong);
+  border-radius: 999px;
+}
+.os-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Keyboard focus — always visible, OS-accent ring */
+.os-focus:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--os-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Transient ring used when global search lands on an item */
+@keyframes os-highlight-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 141, 255, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 141, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 141, 255, 0);
+  }
+}
+.os-highlight {
+  animation: os-highlight-ring 1.1s ease-out 2;
+  border-color: var(--os-accent) !important;
 }

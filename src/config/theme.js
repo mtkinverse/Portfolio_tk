@@ -1,3 +1,6 @@
+// NOTE: the desktop-OS experience themes at runtime via CSS variables in
+// src/index.css ([data-theme="dark" | "light"]). This file remains the seed
+// palette for legacy Tailwind tokens; keep the two in sync when rebranding.
 const theme = {
   colors: {
     bgDark: '#013a63',
