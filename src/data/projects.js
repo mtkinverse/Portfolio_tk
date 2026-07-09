@@ -11,7 +11,7 @@ const projects = {
       description:
         'Architected and delivered a production SaaS backend at 360XpertsSolutions. Implemented multi-tenancy with full tenant isolation, RBAC, feature toggles, event sourcing, and per-message encryption key rotation. Deployed via Kubernetes with PM2 process management and RabbitMQ for async event-driven pipelines.',
       highlights: [
-        'Led team of 3–4 engineers end-to-end',
+        'Led team of 3 to 4 engineers end-to-end',
         'Delivered to production for 3+ clients',
         'Per-message encryption key rotation',
         'Performance monitoring hooks',
@@ -87,7 +87,7 @@ const projects = {
     },
     {
       label: 'SharZii',
-      picture: 'projects/sharzii.png',
+      picture: '/projects/sharzii.png',
       tech: ['Node.js', 'JavaScript', 'Python', 'WebRTC'],
       gitLink: 'https://github.com/mtkinverse/SharZii',
       liveLink: null,
@@ -148,7 +148,7 @@ const projects = {
         'CLI pong game with persistent user profiles written in pure C. A foundational project demonstrating systems programming, file I/O, and terminal-based UI.',
       highlights: ['Persistent user profiles', 'CLI interface', 'Pure C systems programming'],
     },
-    // — Example implementations: focused reference projects demonstrating specific architectural patterns —
+    // Example implementations: focused reference projects demonstrating specific architectural patterns
     {
       label: 'Order Management System',
       picture: null,
