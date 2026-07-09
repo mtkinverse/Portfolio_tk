@@ -87,7 +87,7 @@ const projects = {
     },
     {
       label: 'SharZii',
-      picture: 'projects/sharzii.png',
+      picture: '/projects/sharzii.png',
       tech: ['Node.js', 'JavaScript', 'Python', 'WebRTC'],
       gitLink: 'https://github.com/mtkinverse/SharZii',
       liveLink: null,

@@ -12,7 +12,9 @@ const education = {
         'BS-CS with a systems and backend focus; final-year project in computer vision.',
       highlights: [
         'CGPA 3.76 / 4.0',
+        "Dean's List in all semesters",
         'Student Lab Assistant (Data Structures & Algorithms); supported 50+ students',
+        'Defended the final-year project on Person Re-Identification',
       ],
       fyp: {
         title: 'Lightweight Person Re-Identification Pipeline',

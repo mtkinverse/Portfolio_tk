@@ -47,6 +47,33 @@ const achievements = {
         'Led teams of 3 to 4 engineers from requirements through production/UAT, shipping ahead of schedule.',
       tech: [],
     },
+    {
+      id: 'deans-list',
+      category: 'Academic',
+      title: "Dean's List in every semester",
+      metric: 'All semesters',
+      description:
+        "Named to the Dean's List in all semesters of the BS Computer Science program at NUCES-FAST Karachi, graduating with a 3.76/4.0 CGPA.",
+      tech: [],
+    },
+    {
+      id: 'fyp-defense',
+      category: 'Academic',
+      title: 'Defended the final-year project on Person Re-Identification',
+      metric: 'FYP defended',
+      description:
+        'Presented and successfully defended a lightweight person re-identification pipeline tackling occlusion, pose variation, and illumination variation; a gap unaddressed in existing literature.',
+      tech: ['Computer Vision', 'Person Re-ID'],
+    },
+    {
+      id: 'data-odyssey-competition',
+      category: 'Community',
+      title: 'Built Data Odyssey and conducted a live SQL competition',
+      metric: 'Live event',
+      description:
+        'Designed and built the Data Odyssey competition platform, then conducted the SQL competition on it end to end, with third-party query execution, automated scoring, and a live leaderboard.',
+      tech: ['Node.js', 'MySQL', 'OneCompiler'],
+    },
   ],
 };
 
