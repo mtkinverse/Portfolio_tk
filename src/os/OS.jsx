@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectTheme } from '../store/uiSlice';
+import { clampWindows } from '../store/windowsSlice';
 import Wallpaper from './Wallpaper';
 import Desktop from './Desktop';
 import WindowLayer from './window/WindowLayer';
@@ -11,6 +12,7 @@ import SmallScreenGate from './SmallScreenGate';
 import useGlobalHotkeys from './hooks/useGlobalHotkeys';
 
 export default function OS() {
+  const dispatch = useDispatch();
   const theme = useSelector(selectTheme);
   const desktopRef = useRef(null);
   useGlobalHotkeys();
@@ -18,6 +20,14 @@ export default function OS() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
+
+  // Keep every window reachable when the viewport shrinks.
+  useEffect(() => {
+    const onResize = () =>
+      dispatch(clampWindows({ vw: window.innerWidth, vh: window.innerHeight }));
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [dispatch]);
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-os-base text-os-text font-os">

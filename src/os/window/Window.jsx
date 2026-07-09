@@ -1,8 +1,6 @@
 import { memo, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-  motion, useDragControls, useMotionValue, animate, useReducedMotion,
-} from 'framer-motion';
+import { motion, useDragControls, useMotionValue, useReducedMotion } from 'framer-motion';
 import {
   closeApp, destroyWindow, focusWindow, minimizeWindow, toggleMaximize, moveWindow,
 } from '../../store/windowsSlice';
@@ -10,10 +8,13 @@ import { getComponent } from '../apps/registry';
 import TitleBar from './TitleBar';
 
 const spring = { type: 'spring', stiffness: 300, damping: 28, mass: 0.8 };
+const clamp = (v, min, max) => Math.min(Math.max(v, min), Math.max(min, max));
 
 // Position is driven by x/y motion values passed to `style` — framer's drag
 // mutates those same values, so drag and store position never double-apply.
-// The open/close scale grows from the clicked folder icon via transformOrigin.
+// Maximize is DETERMINISTIC: the transform is hard-set to 0,0 in the same
+// handler that dispatches (no animation to be interrupted), so the title bar
+// and close button can never end up off-screen.
 function Window({ win, constraintsRef }) {
   const dispatch = useDispatch();
   const controls = useDragControls();
@@ -21,14 +22,42 @@ function Window({ win, constraintsRef }) {
   const x = useMotionValue(win.x);
   const y = useMotionValue(win.y);
 
-  // Maximize ⇄ restore glides between the corner and the stored position.
+  // Keep the transform in sync when the store moves us from outside a drag
+  // (e.g. viewport-resize clamping). No-op after normal drag ends.
   useEffect(() => {
-    const to = win.maximized ? { x: 0, y: 0 } : { x: win.x, y: win.y };
-    const ax = animate(x, to.x, spring);
-    const ay = animate(y, to.y, spring);
-    return () => { ax.stop(); ay.stop(); };
+    if (!win.maximized) {
+      x.set(win.x);
+      y.set(win.y);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [win.maximized]);
+  }, [win.x, win.y, win.maximized]);
+
+  const handleToggleMax = () => {
+    if (win.maximized) {
+      x.set(win.x);
+      y.set(win.y);
+    } else {
+      x.set(0);
+      y.set(0);
+    }
+    dispatch(toggleMaximize(win.id));
+  };
+
+  const startDrag = (e) => {
+    if (e.button !== 0) return;
+    if (win.maximized) {
+      // Drag-to-restore: un-maximize under the cursor and keep dragging.
+      const vw = window.innerWidth;
+      const ratio = clamp(e.clientX / vw, 0.05, 0.95);
+      const newX = clamp(e.clientX - win.w * ratio, 0, vw - win.w);
+      const newY = Math.max(e.clientY - 20, 0);
+      x.set(newX);
+      y.set(newY);
+      dispatch(moveWindow({ id: win.id, x: newX, y: newY }));
+      dispatch(toggleMaximize(win.id));
+    }
+    controls.start(e);
+  };
 
   const AppComp = useMemo(() => getComponent(win.appId), [win.appId]);
 
@@ -65,7 +94,7 @@ function Window({ win, constraintsRef }) {
         borderRadius: win.maximized ? 0 : 12,
         pointerEvents: win.minimized ? 'none' : 'auto',
       }}
-      drag={!win.maximized}
+      drag
       dragControls={controls}
       dragListener={false}
       dragMomentum={false}
@@ -83,11 +112,9 @@ function Window({ win, constraintsRef }) {
     >
       <TitleBar
         win={win}
-        onDragStart={(e) => {
-          if (e.button === 0 && !win.maximized) controls.start(e);
-        }}
+        onDragStart={startDrag}
         onMinimize={() => dispatch(minimizeWindow(win.id))}
-        onToggleMax={() => dispatch(toggleMaximize(win.id))}
+        onToggleMax={handleToggleMax}
         onClose={() => dispatch(closeApp(win.id))}
       />
       <div className="min-h-0 flex-1">

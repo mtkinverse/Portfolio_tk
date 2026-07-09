@@ -2,6 +2,9 @@ import { APPS } from './apps/appMeta';
 import DesktopIcon from './DesktopIcon';
 import HeroWidgets from './HeroWidgets';
 
+const COARSE_POINTER =
+  typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
 export default function Desktop() {
   const desktopApps = APPS.filter((a) => a.showOnDesktop);
 
@@ -18,7 +21,8 @@ export default function Desktop() {
 
       {/* Gentle onboarding hint */}
       <p className="absolute bottom-4 left-1/2 -translate-x-1/2 select-none text-[12px] text-os-dim">
-        Double-click a folder to open it&ensp;·&ensp;
+        {COARSE_POINTER ? 'Tap a folder to open it' : 'Double-click a folder to open it'}
+        &ensp;·&ensp;
         <kbd className="rounded border border-os-hairline bg-[var(--os-glass)] px-1.5 py-0.5 font-mono text-[10px]">
           Ctrl
         </kbd>

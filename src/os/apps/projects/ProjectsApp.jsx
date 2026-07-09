@@ -46,11 +46,18 @@ const ProjectLinks = ({ project }) =>
 
 function ProjectCard({ project, highlighted, onOpen }) {
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={onOpen}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
       data-item-id={slugify(project.label)}
-      className={`os-tile flex flex-col gap-2.5 rounded-xl p-4 text-left transition-colors duration-150 hover:border-os-accent/60 ${
+      className={`os-tile flex cursor-pointer flex-col gap-2.5 rounded-xl p-4 text-left transition-colors duration-150 hover:border-os-accent/60 ${
         highlighted ? 'os-highlight' : ''
       }`}
     >
@@ -66,10 +73,18 @@ function ProjectCard({ project, highlighted, onOpen }) {
           <span className="text-[11px] text-os-dim">+{project.tech.length - 5}</span>
         )}
       </span>
-      <span className="line-clamp-3 text-[12px] leading-relaxed text-os-muted">
+      <span className="line-clamp-3 flex-1 text-[12px] leading-relaxed text-os-muted">
         {project.description}
       </span>
-    </button>
+      {/* Direct links on the card; clicks here must not open the detail view */}
+      <span
+        className="mt-auto border-t border-os-hairline pt-2.5"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <ProjectLinks project={project} />
+      </span>
+    </div>
   );
 }
 
@@ -90,11 +105,13 @@ function ProjectDetail({ project, onBack }) {
       </div>
 
       {project.picture && (
-        <img
-          src={project.picture.startsWith('/') ? project.picture : `/${project.picture}`}
-          alt={`${project.label} screenshot`}
-          className="max-h-64 w-full rounded-xl border border-os-hairline object-cover"
-        />
+        <div className="flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border border-os-hairline bg-[var(--os-abyss)]">
+          <img
+            src={project.picture.startsWith('/') ? project.picture : `/${project.picture}`}
+            alt={`${project.label} screenshot`}
+            className="max-h-full max-w-full object-contain"
+          />
+        </div>
       )}
 
       <p className="max-w-prose text-[13px] leading-relaxed text-os-muted">{project.description}</p>
