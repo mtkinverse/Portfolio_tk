@@ -1,10 +1,10 @@
 import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 
 const metrics = [
-  { value: '3+',  label: 'Production Deployments' },
-  { value: '3+',  label: 'Client Projects' },
-  { value: '3–4', label: 'Engineers Led' },
-  { value: '3.7', label: 'CGPA' },
+  { value: '1+',   label: 'Years Experience' },
+  { value: '6+',   label: 'Client Projects' },
+  { value: '3-4',  label: 'Engineers Led' },
+  { value: '3.76', label: 'CGPA' },
 ];
 
 const Hero = () => (
@@ -35,9 +35,9 @@ const Hero = () => (
 
           <p className="text-textTheme-muted text-base leading-relaxed max-w-2xl">
             Backend developer with hands-on production experience building distributed systems, microservices,
-            and agentic AI pipelines. I implement the kind of patterns — multi-tenancy, event sourcing,
-            per-message encryption, Kubernetes deployments — that most developers only read about.
-            BS-CS at NUCES-FAST Karachi (CGPA 3.7, expected June 2026).
+            and agentic AI pipelines. I implement the kind of patterns most developers only read about:
+            multi-tenancy, event sourcing, per-message encryption, and Kubernetes deployments.
+            BS-CS from NUCES-FAST Karachi (CGPA 3.76, graduated June 2026).
           </p>
 
           {/* Metrics row */}
@@ -75,7 +75,7 @@ const Hero = () => (
               <FaGithub size={20} />
             </a>
             <a
-              href="https://www.linkedin.com/in/taha-khan-259106257/"
+              href="https://www.linkedin.com/in/taha-khan-system-thinker/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
